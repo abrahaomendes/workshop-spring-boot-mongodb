@@ -11,14 +11,14 @@ import com.workshopmongo.domain.Post;
 import com.workshopmongo.services.PostService;
 
 @RestController
-@RequestMapping(value ="/users")
+@RequestMapping(value ="/posts")
 public class PostResource {
 	
 	@Autowired
 	private PostService postService;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Post> findById(@PathVariable String id){
+	public ResponseEntity<Post> findById(@PathVariable String id) {
 		Post obj = postService.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
